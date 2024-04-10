@@ -2,6 +2,82 @@
 
 #define MAX_OPTIONS 5
 #define MAX_OPTIONS1 6
+#define MAX_OPTIONS2 6
+void subjectPartMenu()
+{
+    const int screenWidth = 800;
+    const int screenHeight = 450;
+
+    InitWindow(screenWidth, screenHeight, "Menu Example");
+
+    const char* menuOptions[MAX_OPTIONS2] = {
+        "Part1",
+        "Part2",
+        "Part3",
+        "Part4",
+        "Part5",
+        "Part6"
+    };
+
+    int selectedOption = 0;
+    int subjectNum = 0; // Initialize avatarNum to 0
+    int selectedSubjectPart = 0;
+    SetTargetFPS(60);
+
+    while (!WindowShouldClose()) {
+        if (IsKeyPressed(KEY_UP)) {
+            selectedOption = (selectedOption - 1 + MAX_OPTIONS2) % MAX_OPTIONS2;
+        }
+        else if (IsKeyPressed(KEY_DOWN)) {
+            selectedOption = (selectedOption + 1) % MAX_OPTIONS2;
+        }
+        else if (IsKeyPressed(KEY_ENTER)) {
+            selectedSubjectPart = selectedOption;
+        }
+
+        // Set avatarNum based on selectedOption using switch-case
+        switch (selectedSubjectPart) {
+        case 1:
+            part1();
+            break;
+        case 2:
+            part2();
+            break;
+        case 3:
+            part3();
+            break;
+        case 4:
+            part4();
+            break;
+        case 5:
+            part5();
+            break;
+        case 6:
+            part6();
+            break;
+        default:
+            subjectNum = 0; // Set default value if selectedOption is out of range
+            break;
+        }
+
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+
+        // Draw menu options
+        for (int i = 0; i < MAX_OPTIONS2; i++) {
+            if (i == selectedOption) {
+                DrawText(menuOptions[i], 50, 50 + 30 * i, 20, RED);
+            }
+            else {
+                DrawText(menuOptions[i], 50, 50 + 30 * i, 20, BLACK);
+            }
+        }
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+}
     void subjectMenu() {
         const int screenWidth = 800;
         const int screenHeight = 450;
@@ -19,7 +95,7 @@
 
         int selectedOption = 0;
         int subjectNum = 0; // Initialize avatarNum to 0
-
+        int selectedSubject = 0;
         SetTargetFPS(60);
 
         while (!WindowShouldClose()) {
@@ -30,27 +106,27 @@
                 selectedOption = (selectedOption + 1) % MAX_OPTIONS1;
             }
             else if (IsKeyPressed(KEY_ENTER)) {
-                subjectMenu();
+                selectedSubject = selectedOption;
             }
 
             // Set avatarNum based on selectedOption using switch-case
-            switch (selectedOption) {
-            case 0:
+            switch (selectedSubject) {
+            case 1:
                 math();
                 break;
-            case 1:
+            case 2:
                 chemestry();
                 break;
-            case 2:
+            case 3:
                 geography();
                 break;
-            case 3:
+            case 4:
                 history();
                 break;
-            case 4:
+            case 5:
                 english();
                 break;
-            case 5:
+            case 6:
                 deutsch();
                 break;
             default:
@@ -75,24 +151,6 @@
         }
 
         CloseWindow();
-    }
-    void english()
-    {
-    }
-    void history()
-    {
-    }
-    void deutsch()
-    {
-    }
-    void geography()
-    {
-    }
-    void math()
-    {
-    }
-    void chemestry()
-    {
     }
 void avatarMenu() {
     const int screenWidth = 800;

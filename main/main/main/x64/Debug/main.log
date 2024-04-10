@@ -1,2 +1,8 @@
-﻿  avatarMenu.cpp
+﻿  main.cpp
+  menues.cpp
+  parts.cpp
+  questions.cpp
+  subjects.cpp
+  test.cpp
+  Generating Code...
   main.vcxproj -> C:\Users\User\Desktop\school-project-assignment-bsac\main\main\x64\Debug\main.exe

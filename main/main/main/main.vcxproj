@@ -129,6 +129,10 @@
   <ItemGroup>
     <ClCompile Include="menues.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="parts.cpp" />
+    <ClCompile Include="questions.cpp" />
+    <ClCompile Include="subjects.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
