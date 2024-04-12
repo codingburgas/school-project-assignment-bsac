@@ -78,80 +78,80 @@ void subjectPartMenu()
 
     CloseWindow();
 }
-    void subjectMenu() {
-        const int screenWidth = 800;
-        const int screenHeight = 450;
+void subjectMenu() {
+    const int screenWidth = 800;
+    const int screenHeight = 450;
 
-        InitWindow(screenWidth, screenHeight, "Menu Example");
+    InitWindow(screenWidth, screenHeight, "Menu Example");
 
-        const char* menuOptions[MAX_OPTIONS1] = {
-            "Math",
-            "Chemestry",
-            "Geography",
-            "History",
-            "English",
-            "Deutsch"
-        };
+    const char* menuOptions[MAX_OPTIONS1] = {
+        "Math",
+        "Chemestry",
+        "Geography",
+        "History",
+        "English",
+        "Deutsch"
+    };
 
-        int selectedOption = 0;
-        int subjectNum = 0; // Initialize avatarNum to 0
-        int selectedSubject = 0;
-        SetTargetFPS(60);
+    int selectedOption = 0;
+    int subjectNum = 0; // Initialize avatarNum to 0
+    int selectedSubject = 0;
+    SetTargetFPS(60);
 
-        while (!WindowShouldClose()) {
-            if (IsKeyPressed(KEY_UP)) {
-                selectedOption = (selectedOption - 1 + MAX_OPTIONS1) % MAX_OPTIONS1;
-            }
-            else if (IsKeyPressed(KEY_DOWN)) {
-                selectedOption = (selectedOption + 1) % MAX_OPTIONS1;
-            }
-            else if (IsKeyPressed(KEY_ENTER)) {
-                selectedSubject = selectedOption;
-            }
-
-            // Set avatarNum based on selectedOption using switch-case
-            switch (selectedSubject) {
-            case 1:
-                math();
-                break;
-            case 2:
-                chemestry();
-                break;
-            case 3:
-                geography();
-                break;
-            case 4:
-                history();
-                break;
-            case 5:
-                english();
-                break;
-            case 6:
-                deutsch();
-                break;
-            default:
-                subjectNum = 0; // Set default value if selectedOption is out of range
-                break;
-            }
-
-            BeginDrawing();
-            ClearBackground(RAYWHITE);
-
-            // Draw menu options
-            for (int i = 0; i < MAX_OPTIONS1; i++) {
-                if (i == selectedOption) {
-                    DrawText(menuOptions[i], 50, 50 + 30 * i, 20, RED);
-                }
-                else {
-                    DrawText(menuOptions[i], 50, 50 + 30 * i, 20, BLACK);
-                }
-            }
-
-            EndDrawing();
+    while (!WindowShouldClose()) {
+        if (IsKeyPressed(KEY_UP)) {
+            selectedOption = (selectedOption - 1 + MAX_OPTIONS1) % MAX_OPTIONS1;
+        }
+        else if (IsKeyPressed(KEY_DOWN)) {
+            selectedOption = (selectedOption + 1) % MAX_OPTIONS1;
+        }
+        else if (IsKeyPressed(KEY_ENTER)) {
+            selectedSubject = selectedOption;
         }
 
-        CloseWindow();
+        // Set avatarNum based on selectedOption using switch-case
+        switch (selectedSubject) {
+        case 1:
+            math();
+            break;
+        case 2:
+            chemestry();
+            break;
+        case 3:
+            geography();
+            break;
+        case 4:
+            history();
+            break;
+        case 5:
+            english();
+            break;
+        case 6:
+            deutsch();
+            break;
+        default:
+            subjectNum = 0; // Set default value if selectedOption is out of range
+            break;
+        }
+
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+
+        // Draw menu options
+        for (int i = 0; i < MAX_OPTIONS1; i++) {
+            if (i == selectedOption) {
+                DrawText(menuOptions[i], 50, 50 + 30 * i, 20, RED);
+            }
+            else {
+                DrawText(menuOptions[i], 50, 50 + 30 * i, 20, BLACK);
+            }
+        }
+
+        EndDrawing();
     }
+
+    CloseWindow();
+}
 void avatarMenu() {
     const int screenWidth = 800;
     const int screenHeight = 450;

@@ -2,11 +2,12 @@
 //std::string choosen;
 void chemestry()
 {
-	//choosen = "chemestry";
+
 	subjectPartMenu();
 }
 void english()
 {
+	choosen = "english";
 	subjectPartMenu();
 }
 void history()

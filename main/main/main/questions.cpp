@@ -1,25 +1,26 @@
 #include "main.h"
-
 const int screenWidth = 800;
 const int screenHeight = 450;
 
 const int fontSize = 20;
 std::string question = "What is your answer?";
 std::string answer = "";
-std::string correctAnswer;
+std::string correctAnswer = "ONE";
+std::string cheerText = "";
+std::string choosen;
 bool showTryAgain = false;
 bool congratulationsShown = false;
 
 void checkChoosen()
 {
-    //if (choosen == "chemestry")
-    //{
-      //  correctAnswer = "H2O";
-    //}
+    if (choosen == "english")
+    {
+        correctAnswer = "MY NAME IS APO";
+    }
 }
 
 bool CheckAnswer() {
-        return (answer == correctAnswer);
+    return (answer == correctAnswer);
 }
 
 void DrawTextCenter(const char* text, int fontSize, int posX, int posY, Color color) {
@@ -31,7 +32,13 @@ void UpdateInput() {
     if (IsKeyPressed(KEY_ENTER) && !answer.empty()) {
         if (CheckAnswer()) {
             congratulationsShown = true;
-            std::cout << "Congratulations!" << std::endl;
+            //cheerText = "Congratulations!";
+            //std::cout << cheerText << std::endl;
+            answer = "";
+            test();
+
+
+
         }
         else {
             answer.clear();
@@ -74,11 +81,12 @@ void questionn() {
 
         // Draw "Congratulations" message if the answer is correct
         if (congratulationsShown) {
-            DrawTextCenter("Congratulations!", fontSize, screenWidth / 2, screenHeight / 2 + 100, GREEN);
+            DrawTextCenter("Congratulations for the previous answer!", fontSize, screenWidth / 2, screenHeight / 2 + 100, GREEN);
+            DrawTextCenter("", fontSize, screenWidth / 2, screenHeight / 2 + 100, GREEN);
         }
 
         EndDrawing();
     }
 
-    CloseWindow();
+
 }
