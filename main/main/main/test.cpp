@@ -1,5 +1,4 @@
 #include "main.h"
-
 const int screenWidth = 800;
 const int screenHeight = 450;
 const int cellSize = 20;
@@ -20,8 +19,8 @@ struct Apple {
 };
 
 Snake snake;
-Apple apples[5];
-int num = 5; // Initially 5 apples
+Apple apples[20];
+int num = 20; // Initially 5 apples
 
 void InitGame() {
     // Initialize snake
@@ -61,7 +60,7 @@ void UpdateGame() {
             apples[i].position = { GetRandomValue(0, screenWidth / cellSize - 1) * cellSize,
                                    GetRandomValue(0, screenHeight / cellSize - 1) * cellSize };
             // Decrease the number of active apples
-
+            questionNum++;
             num--;
             if (num == 0)
             {

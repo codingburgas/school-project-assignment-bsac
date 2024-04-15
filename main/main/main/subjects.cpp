@@ -2,27 +2,31 @@
 //std::string choosen;
 void chemestry()
 {
-
-	subjectPartMenu();
+	choosenOne = 1;
+	test();
 }
 void english()
 {
-	choosen = "english";
-	subjectPartMenu();
+	choosenOne = 4;
+	test();
 }
 void history()
 {
-	subjectPartMenu();
+	choosenOne = 3;
+	test();
 }
 void deutsch()
 {
-	subjectPartMenu();
+	choosenOne = 5;
+	test();
 }
 void geography()
 {
-	subjectPartMenu();
+	choosenOne = 2;
+	test();
 }
 void math()
 {
-	subjectPartMenu();
+	choosenOne = 0;
+	test();
 }

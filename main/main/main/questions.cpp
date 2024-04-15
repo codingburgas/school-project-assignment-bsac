@@ -3,25 +3,19 @@ const int screenWidth = 800;
 const int screenHeight = 450;
 
 const int fontSize = 20;
-std::string question = "What is your answer?";
 std::string answer = "";
 std::string correctAnswer = "ONE";
 std::string cheerText = "";
-std::string choosen;
+std::string arr[20] = { "qusetion Chemestry 1", "qusetion Chemestry 2", "qusetion Chemestry 3", "qusetion Chemestry 4", "qusetion Chemestry 5"};
+std::string arr1[20] = { "qusetion Geography 1", "qusetion Geography 2", "qusetion Geography 3", "qusetion Geography 4", "qusetion Geography 5" };
+std::string arr2[20] = { "qusetion History 1", "qusetion History 2", "qusetion History 3", "qusetion History 4", "qusetion History 5" };
+std::string arr3[20] = { "qusetion Englishm 1", "qusetion English 2", "qusetion English 3", "qusetion English 4", "qusetion English 5" };
+std::string arr4[20] = { "qusetion Deutsch 1", "qusetion Deutsch 2", "qusetion Deutsch 3", "qusetion Deutsch 4", "qusetion Deutsch 5" };
 bool showTryAgain = false;
 bool congratulationsShown = false;
-
-void checkChoosen()
-{
-    if (choosen == "english")
-    {
-        correctAnswer = "MY NAME IS APO";
-    }
-}
-
-bool CheckAnswer() {
-    return (answer == correctAnswer);
-}
+int questionNum = 0;
+int choosenOne = 0;
+int arrValue = 0;
 
 void DrawTextCenter(const char* text, int fontSize, int posX, int posY, Color color) {
     int width = MeasureText(text, fontSize);
@@ -30,7 +24,7 @@ void DrawTextCenter(const char* text, int fontSize, int posX, int posY, Color co
 
 void UpdateInput() {
     if (IsKeyPressed(KEY_ENTER) && !answer.empty()) {
-        if (CheckAnswer()) {
+        if (answer == correctAnswer) {
             congratulationsShown = true;
             //cheerText = "Congratulations!";
             //std::cout << cheerText << std::endl;
@@ -67,10 +61,25 @@ void questionn() {
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
-
         // Draw question
-        DrawTextCenter(question.c_str(), fontSize, screenWidth / 2, screenHeight / 2 - 50, BLACK);
-
+        switch (choosenOne)
+        {
+        case 0:
+            DrawTextCenter(arr[questionNum].c_str(), fontSize, screenWidth / 2, screenHeight / 2 - 100, BLACK);
+            break;
+        case  1:
+            DrawTextCenter(arr1[questionNum].c_str(), fontSize, screenWidth / 2, screenHeight / 2 - 100, BLACK);
+            break;
+        case  2:
+            DrawTextCenter(arr2[questionNum].c_str(), fontSize, screenWidth / 2, screenHeight / 2 - 100, BLACK);
+            break;
+        case  3:
+            DrawTextCenter(arr3[questionNum].c_str(), fontSize, screenWidth / 2, screenHeight / 2 - 100, BLACK);
+            break;
+        case  4:
+            DrawTextCenter(arr4[questionNum].c_str(), fontSize, screenWidth / 2, screenHeight / 2 - 100, BLACK);
+            break;
+        }
         // Draw answer
         DrawTextCenter(answer.c_str(), fontSize, screenWidth / 2, screenHeight / 2 + 50, BLACK);
 

@@ -1,9 +1,2 @@
-﻿  main.cpp
-  menues.cpp
-  parts.cpp
-  questions.cpp
-  subjects.cpp
-  test.cpp
-  Generating Code...
-  LINK : C:\Users\User\Desktop\school-project-assignment-bsac\main\main\x64\Debug\main.exe not found or not built by the last incremental link; performing full link
+﻿  questions.cpp
   main.vcxproj -> C:\Users\User\Desktop\school-project-assignment-bsac\main\main\x64\Debug\main.exe
