@@ -17,4 +17,6 @@ void DrawGame();
 void UpdateInput();
 void questionn();
 extern int questionNum;
+extern int asnwerNum;
 extern int choosenOne;
+extern int choosenTwo;

@@ -61,6 +61,7 @@ void UpdateGame() {
                                    GetRandomValue(0, screenHeight / cellSize - 1) * cellSize };
             // Decrease the number of active apples
             questionNum++;
+            asnwerNum++;
             num--;
             if (num == 0)
             {
