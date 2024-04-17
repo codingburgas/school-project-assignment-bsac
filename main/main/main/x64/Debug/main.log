@@ -1,21 +1,4 @@
-﻿  menues.cpp
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(55,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(55,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(61,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(61,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(64,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(64,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(65,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(65,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(67,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(67,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(85,46): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\main\menues.cpp(106,46): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  main.cpp
-  questions.cpp
-  subjects.cpp
-  test.cpp
-  Generating Code...
-  main.vcxproj -> C:\Users\stoya\Downloads\school-project-assignment-bsac\main\main\x64\Debug\main.exe
+﻿  questions.cpp
+  main.vcxproj -> C:\Users\Acer\Downloads\school-project-assignment-bsac\main\main\x64\Debug\main.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
