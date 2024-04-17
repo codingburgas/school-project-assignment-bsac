@@ -2,6 +2,7 @@
 #include "raylib.h"
 #include <vector>
 #include <iostream>
+int login(void);
 void avatarMenu();
 void subjectMenu();
 void math();

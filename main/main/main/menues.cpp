@@ -1,7 +1,127 @@
 #include "main.h"
 
+#define MAX_INPUT_CHARS  20
 #define MAX_OPTIONS 5
 #define MAX_OPTIONS1 6
+int login(void)
+{
+    // Initialization
+    const int screenWidth = 800;
+    const int screenHeight = 450;
+
+    InitWindow(screenWidth, screenHeight, "Login Page");
+
+    char username[MAX_INPUT_CHARS + 1] = "\0";
+    char password[MAX_INPUT_CHARS + 1] = "\0";
+
+    Rectangle usernameBox = { screenWidth / 2 - 100, screenHeight / 2 - 40, 200, 40 };
+    Rectangle passwordBox = { screenWidth / 2 - 100, screenHeight / 2 + 20, 200, 40 };
+    Rectangle loginButton = { screenWidth / 2 - 80, screenHeight / 2 + 80, 160, 40 };
+
+    bool loginPressed = false;
+    bool isUsernameTyped = false; // Flag to check if username is typed
+    bool isPasswordTyped = false; // Flag to check if password is typed
+    bool isTypingUsername = true; // Flag to track if currently typing in username
+
+    SetTargetFPS(60);
+
+    // Main loop
+    while (!WindowShouldClose())
+    {
+        // Update
+        if (CheckCollisionPointRec(GetMousePosition(), loginButton))
+        {
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+            {
+                loginPressed = true;
+            }
+        }
+
+        // Draw
+        BeginDrawing();
+
+        ClearBackground(RAYWHITE);
+
+        // Draw title
+        DrawText("Bsac", screenWidth / 2 - MeasureText("Bsac", 40) / 2, 50, 40, BLACK);
+
+        DrawRectangleRec(usernameBox, LIGHTGRAY);
+        DrawRectangleRec(passwordBox, LIGHTGRAY);
+        DrawRectangleRec(loginButton, (loginPressed) ? GRAY : DARKGRAY);
+
+        // Draw "Username" text only if username is not typed
+        if (!isUsernameTyped)
+        {
+            DrawText("Username:", usernameBox.x + 10, usernameBox.y + 10, 20, BLACK);
+        }
+
+        // Draw "Password" text only if password is not typed
+        if (!isPasswordTyped)
+        {
+            DrawText("Password:", passwordBox.x + 10, passwordBox.y + 10, 20, BLACK);
+        }
+
+        DrawText(username, usernameBox.x + 20, usernameBox.y + 20, 20, MAROON);
+        DrawText(password, passwordBox.x + 20, passwordBox.y + 20, 20, MAROON);
+
+        DrawText("LOGIN", loginButton.x + 40, loginButton.y + 10, 20, WHITE);
+
+        EndDrawing();
+
+        // Input handling
+        if (loginPressed)
+        {
+            avatarMenu(); // Call start function
+            loginPressed = false;
+        }
+        else
+        {
+            // Input username
+            int key = GetKeyPressed();
+            if (key != 0 && isTypingUsername)
+            {
+                isUsernameTyped = true; // Set flag to true when username is typed
+
+                int length = strlen(username);
+                if (((key >= 32) && (key <= 125)) && (length < MAX_INPUT_CHARS))
+                {
+                    username[length] = (char)key;
+                    username[length + 1] = '\0';
+                }
+                else if ((key == KEY_BACKSPACE) && (length > 0))
+                {
+                    username[length - 1] = '\0';
+                }
+                else if (key == KEY_ENTER)
+                {
+                    isTypingUsername = false; // Switch to typing password
+                }
+            }
+
+            // Input password
+            else if (key != 0 && !isTypingUsername)
+            {
+                isPasswordTyped = true; // Set flag to true when password is typed
+
+                int length = strlen(password);
+                if (((key >= 32) && (key <= 125)) && (length < MAX_INPUT_CHARS))
+                {
+                    password[length] = (char)key;
+                    password[length + 1] = '\0';
+                }
+                else if ((key == KEY_BACKSPACE) && (length > 0))
+                {
+                    password[length - 1] = '\0';
+                }
+            }
+        }
+    }
+
+    // De-Initialization
+    CloseWindow();
+
+    return 0;
+}
 void subjectMenu() {
     const int screenWidth = 800;
     const int screenHeight = 450;
