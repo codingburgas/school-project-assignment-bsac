@@ -8,7 +8,7 @@ int login(void)
     // Initialization
     const int screenWidth = 800;
     const int screenHeight = 450;
-
+    
     InitWindow(screenWidth, screenHeight, "Login Page");
 
     char username[MAX_INPUT_CHARS + 1] = "\0";
@@ -44,7 +44,6 @@ int login(void)
 
         // Draw title
         DrawText("Bsac", screenWidth / 2 - MeasureText("Bsac", 40) / 2, 50, 40, BLACK);
-
         DrawRectangleRec(usernameBox, LIGHTGRAY);
         DrawRectangleRec(passwordBox, LIGHTGRAY);
         DrawRectangleRec(loginButton, (loginPressed) ? GRAY : DARKGRAY);
@@ -116,7 +115,6 @@ int login(void)
             }
         }
     }
-
     // De-Initialization
     CloseWindow();
 
