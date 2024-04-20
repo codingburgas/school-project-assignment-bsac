@@ -2,7 +2,6 @@
 #include "raylib.h"
 #include <vector>
 #include <iostream>
-int login(void);
 void avatarMenu();
 void subjectMenu();
 void math();
@@ -21,3 +20,4 @@ extern int questionNum;
 extern int asnwerNum;
 extern int choosenOne;
 extern int choosenTwo;
+int login(void);

@@ -1,8 +1,16 @@
 ﻿#include "main.h"
 const int screenWidth = 800;
 const int screenHeight = 450;
-
 const int fontSize = 20;
+int questionNum = 0;
+int choosenOne = 0;
+int choosenTwo = 0;
+int arrValue = 0;
+int asnwerNum = 0;
+bool showTryAgain = false;
+bool congratulationsShown = false;
+
+//questions and answers
 std::string answer = "";
 std::string cheerText = "";
 std::string arr[21] = { ".", "What is the chemical symbol for potassium?", "Which element is essential for human bones and teeth?", "What is the lightest noble gas?", "Which metal is liquid at room temperature?", "What element is commonly used in batteries?","What is the chemical symbol for gold?", "Which gas do plants use for photosynthesis?", "What element is the primary component of diamonds?", "WWhich element has the atomic number 1?", "What is the chemical symbol for iron?", "Which element is most abundant in the Earth's crust?", "What is the chemical symbol for silver?", "Which gas is responsible for the blue color of the sky?", "What element is commonly used in light bulbs?", " Which element is essential for the process of photosynthesis?", " What is the chemical symbol for lead?", "Which metal is commonly used in aircraft construction?", "What element is used in the manufacture of glass?", "Which element is essential for the formation of DNA?", "What is the chemical symbol for nitrogen?" };
@@ -15,19 +23,13 @@ std::string arr21[21] = { ".", "Paris", "Asia", "Pacific Ocean", "Nile River", "
 std::string arr22[21] = { ".", "1914", "George Washington", "1492", "William Shakespeare", "Leonardo da Vinci", "1989", "Joseph Stalin", "Margaret Thatcher", "1865", "Cleopatra", "Ancient Egyptians", "Siddhartha Gautama", "1912", "Augustus", "1776", "Florence Nightingale", "Queen Victoria", "The Fall of Constantinople", "Vasco da Gama", "Vladimir Lenin" };
 std::string arr23[21] = { ".", "children", "ate", "light", "best", "joyful", "the formation of words that imitate natural sounds", "running", "runner", "bigger", "gorgeous", "gone", "increase", "mice", "mourn", "lose", "occasion", "a group of words whose meaning is different from the meanings of the individual words", "swim", "farther", "quickly" };
 std::string arr24[21] = { ".", "GUTEN TAG", "AUF WIEDERSEHEN", "NEIN", "BITTE", "ENTSCHULDIGUNG" ,"WO", "MEIN NAME IST", "VIELEN DANK", "I LOVE YOU", "HALLO" , "JA", "WIE GEHT ES DIR", "ES TUT MIR LEID", "I DON'T UNDERSTAND", "WO IST DIE TOILETTE" , "HAUS", "WHAT IS YOUR NAME", "KATZE", "GUTEN ABEND", "ICH HABE HUNGER" };
-bool showTryAgain = false;
-bool congratulationsShown = false;
-int questionNum = 0;
-int choosenOne = 0;
-int choosenTwo = 0;
-int arrValue = 0;
-int asnwerNum = 0;
+
 
 void DrawTextCenter(const char* text, int fontSize, int posX, int posY, Color color) {
     int width = MeasureText(text, fontSize);
     DrawText(text, posX - width / 2, posY, fontSize, color);
 }
-
+//answers
 void UpdateInput() {
     switch (choosenTwo)
     {
@@ -170,7 +172,7 @@ void UpdateInput() {
 
     }
 }
-
+//questions
 void questionn() {
     InitWindow(screenWidth, screenHeight, "Question and Answer");
     SetTargetFPS(60);

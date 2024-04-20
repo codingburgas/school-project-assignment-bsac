@@ -1,5 +1,5 @@
 #include "main.h"
-//std::string choosen;
+//void for every subject that is choosen
 void chemestry()
 {
 	choosenOne = 1;

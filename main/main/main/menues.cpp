@@ -18,10 +18,10 @@ int login(void)
     Rectangle passwordBox = { screenWidth / 2 - 100, screenHeight / 2 + 20, 200, 40 };
     Rectangle loginButton = { screenWidth / 2 - 80, screenHeight / 2 + 80, 160, 40 };
 
-    bool loginPressed = false;
-    bool isUsernameTyped = false; // Flag to check if username is typed
-    bool isPasswordTyped = false; // Flag to check if password is typed
-    bool isTypingUsername = true; // Flag to track if currently typing in username
+    bool loginPressed = false;// Check if loginButton is pressed
+    bool isUsernameTyped = false; // Heck if username is typed
+    bool isPasswordTyped = false; // Check if password is typed
+    bool isTypingUsername = true; // Track if currently typing in username
 
     SetTargetFPS(60);
 
@@ -210,7 +210,7 @@ void avatarMenu() {
         "Option 5"
     };
 
-    int selectedOption = 0;
+    int selectedOption = 0;// Initialize selectedOption to 0
     int avatarNum = 0; // Initialize avatarNum to 0
 
     SetTargetFPS(60);

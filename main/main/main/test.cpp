@@ -8,62 +8,62 @@ struct Vector2Int {
     int y;
 };
 
-struct Snake {
+struct YourHero {
     Vector2Int position;
     Vector2Int speed;
 };
 
-struct Apple {
+struct Questions {
     Vector2Int position;
     bool active;
 };
 
-Snake snake;
-Apple apples[20];
-int num = 20; // Initially 5 apples
+YourHero yourHero;
+Questions question[20];
+int num = 20; // Initially 5 questions
 
 void InitGame() {
-    // Initialize snake
-    snake.position = { screenWidth / 2, screenHeight / 2 };
-    snake.speed = { 0, 0 };
+    // Initialize yourHero
+    yourHero.position = { screenWidth / 2, screenHeight / 2 };
+    yourHero.speed = { 0, 0 };
 
-    // Initialize apples
+    // Initialize questions
     for (int i = 0; i < num; ++i) {
-        apples[i].position = { GetRandomValue(0, screenWidth / cellSize - 1) * cellSize,
+        question[i].position = { GetRandomValue(0, screenWidth / cellSize - 1) * cellSize,
                                GetRandomValue(0, screenHeight / cellSize - 1) * cellSize };
-        apples[i].active = true;
+        question[i].active = true;
     }
 }
 
 void UpdateGame() {
-    // Move snake only when a movement key is pressed
-    if (IsKeyDown(KEY_UP)) snake.speed = { 0, -cellSize };
-    else if (IsKeyDown(KEY_DOWN)) snake.speed = { 0, cellSize };
-    else if (IsKeyDown(KEY_LEFT)) snake.speed = { -cellSize, 0 };
-    else if (IsKeyDown(KEY_RIGHT)) snake.speed = { cellSize, 0 };
+    // Move yourHero only when a movement key is pressed
+    if (IsKeyDown(KEY_UP)) yourHero.speed = { 0, -cellSize };
+    else if (IsKeyDown(KEY_DOWN)) yourHero.speed = { 0, cellSize };
+    else if (IsKeyDown(KEY_LEFT)) yourHero.speed = { -cellSize, 0 };
+    else if (IsKeyDown(KEY_RIGHT)) yourHero.speed = { cellSize, 0 };
 
-    // Update snake position
-    snake.position.x += snake.speed.x;
-    snake.position.y += snake.speed.y;
+    // Update yourHero position
+    yourHero.position.x += yourHero.speed.x;
+    yourHero.position.y += yourHero.speed.y;
 
-    // Wrap snake around the screen
-    if (snake.position.x >= screenWidth) snake.position.x = 0;
-    else if (snake.position.x < 0) snake.position.x = screenWidth - cellSize;
-    if (snake.position.y >= screenHeight) snake.position.y = 0;
-    else if (snake.position.y < 0) snake.position.y = screenHeight - cellSize;
+    // Wrap yourHero around the screen
+    if (yourHero.position.x >= screenWidth) yourHero.position.x = 0;
+    else if (yourHero.position.x < 0) yourHero.position.x = screenWidth - cellSize;
+    if (yourHero.position.y >= screenHeight) yourHero.position.y = 0;
+    else if (yourHero.position.y < 0) yourHero.position.y = screenHeight - cellSize;
 
-    // Check for collision with apples
+    // Check for collision with questions
     for (int i = 0; i < num; ++i) {
-        if (apples[i].active && CheckCollisionRecs({ (float)snake.position.x, (float)snake.position.y, (float)cellSize, (float)cellSize },
-            { (float)apples[i].position.x, (float)apples[i].position.y, (float)cellSize, (float)cellSize })) {
-            apples[i].active = false;
-            apples[i].position = { GetRandomValue(0, screenWidth / cellSize - 1) * cellSize,
+        if (question[i].active && CheckCollisionRecs({ (float)yourHero.position.x, (float)yourHero.position.y, (float)cellSize, (float)cellSize },
+            { (float)question[i].position.x, (float)question[i].position.y, (float)cellSize, (float)cellSize })) {
+            question[i].active = false;
+            question[i].position = { GetRandomValue(0, screenWidth / cellSize - 1) * cellSize,
                                    GetRandomValue(0, screenHeight / cellSize - 1) * cellSize };
-            // Decrease the number of active apples
-            questionNum++;
-            asnwerNum++;
-            num--;
-            if (num == 0)
+            // Decrease the number of active questions
+            questionNum++;//Add up one to questionNum
+            asnwerNum++;//Add up one to asnwerNum
+            num--;//Remove one from num
+            if (num == 0)//Check if num equals 0
             {
                 subjectMenu();
             }
@@ -76,13 +76,13 @@ void DrawGame() {
     BeginDrawing();
     ClearBackground(RAYWHITE);
 
-    // Draw snake
-    DrawRectangle(snake.position.x, snake.position.y, cellSize, cellSize, GREEN);
+    // Draw yourHero
+    DrawRectangle(yourHero.position.x, yourHero.position.y, cellSize, cellSize, GREEN);
 
-    // Draw apples
+    // Draw questions
     for (int i = 0; i < num; ++i) {
-        if (apples[i].active)
-            DrawRectangle(apples[i].position.x, apples[i].position.y, cellSize, cellSize, RED);
+        if (question[i].active)
+            DrawRectangle(question[i].position.x, question[i].position.y, cellSize, cellSize, RED);
     }
 
     EndDrawing();
@@ -90,7 +90,7 @@ void DrawGame() {
 
 void test() {
     // Initialization
-    InitWindow(screenWidth, screenHeight, "Snake Game");
+    InitWindow(screenWidth, screenHeight, "Choosing questions");
     SetTargetFPS(10);
     InitGame();
 
