@@ -70,7 +70,7 @@ int login(void)
         // Input handling
         if (loginPressed)
         {
-            avatarMenu(); // Call start function
+            subjectMenu(); // Call start function
             loginPressed = false;
         }
         else

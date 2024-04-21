@@ -203,6 +203,16 @@ void questionn() {
         }
         // Draw answer
         DrawTextCenter(answer.c_str(), fontSize, screenWidth / 2, screenHeight / 2 + 50, BLACK);
+        Rectangle buttonReturn = { screenWidth - 150, screenHeight - 50, 120, 40 };
+        DrawRectangleRec(buttonReturn, GRAY);
+        DrawText("RETURN", buttonReturn.x + 10, buttonReturn.y + 10, 20, WHITE);
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            Vector2 mousePos = GetMousePosition();
+            if (CheckCollisionPointRec(mousePos, buttonReturn)) {
+                // Call the subjectMenu function
+                subjectMenu();
+            }
+        }
 
         // Draw "Try again" message if the answer is incorrect
         if (showTryAgain) {
