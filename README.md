@@ -1,7 +1,7 @@
 <h1 align="center">Team Bsac</h1>
 
 <p align="center">
-    <img src ="assets/banner.png"/>
+    <img src ="src/assets/banner.png"/>
 </p>
 
 ## 🧒 Our Team
@@ -12,7 +12,7 @@
 <a href = “https://github.com/MTNenkov21”> 🟦 Martin Nenkov [ BackEnd Developer ] </a><br>
 <a href = “https://github.com/MMDoychev22”> 🟥 Mitko Doychev [ FrontEnd Developer ] </a><br>
 <a href = “https://github.com/SDDimitrov22”> 🟩 Stefan Dimitrov [ FrontEnd Developer ] </a><br>
-<a href = “https://github.com/IMIvanov22”> 🟦 Ivan Ivanov [ Designer ] </a><br>
+<a href = “https://github.com/IMIvanov22”> 🟦 Ivan Ivanov [ QA Developer ] </a><br>
 </b>
 
 ## 💻 About
