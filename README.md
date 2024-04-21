@@ -1,6 +1,8 @@
 <h1 align="center">Team Bsac</h1>
 
-
+<p align="center">
+    <img src ="assets/banner.png"/>
+</p>
 
 ## 🧒 Our Team
 
@@ -48,13 +50,11 @@
 
 ## 📄Documents
 
-<a href="">QA Documentation </a>
+<a href="https://github.com/codingburgas/school-project-assignment-bsac/blob/main/docs/Bsac_QA_Documentation.xlsx">QA Documentation </a>
 
-<a href="">Documentation </a>
+<a href="https://github.com/codingburgas/school-project-assignment-bsac/blob/main/docs/Bsac_Documentation.docx">Documentation </a>
 
-<a href="">Presentation </a>
-
-<a href="">Test Plan </a>
+<a href="https://github.com/codingburgas/school-project-assignment-bsac/blob/main/docs/Bsac_Presentation.pptx">Presentation </a>
 
 <hr>
 
