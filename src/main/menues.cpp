@@ -8,11 +8,17 @@ int login(void)
     // Initialization
     const int screenWidth = 800;
     const int screenHeight = 450;
-    
+
     InitWindow(screenWidth, screenHeight, "Login Page");
+    InitWindow(screenWidth, screenHeight, "Background Image");
 
     char username[MAX_INPUT_CHARS + 1] = "\0";
     char password[MAX_INPUT_CHARS + 1] = "\0";
+
+    Texture2D background = LoadTexture("../assets/background.png");
+
+    background.width = screenWidth;
+    background.height = screenHeight;
 
     Rectangle usernameBox = { screenWidth / 2 - 100, screenHeight / 2 - 40, 200, 40 };
     Rectangle passwordBox = { screenWidth / 2 - 100, screenHeight / 2 + 20, 200, 40 };
@@ -43,7 +49,6 @@ int login(void)
         ClearBackground(RAYWHITE);
 
         // Draw title
-        DrawText("Bsac", screenWidth / 2 - MeasureText("Bsac", 40) / 2, 50, 40, BLACK);
         DrawRectangleRec(usernameBox, LIGHTGRAY);
         DrawRectangleRec(passwordBox, LIGHTGRAY);
         DrawRectangleRec(loginButton, (loginPressed) ? GRAY : DARKGRAY);
@@ -114,8 +119,16 @@ int login(void)
                 }
             }
         }
+
+        ClearBackground(RAYWHITE);
+
+        // Draw the background image
+        DrawTexture(background, 0, 0, WHITE);
+
     }
     // De-Initialization
+    UnloadTexture(background);
+
     CloseWindow();
 
     return 0;
