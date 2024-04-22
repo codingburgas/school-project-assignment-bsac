@@ -7,7 +7,6 @@ struct Vector2Int {
     int x;
     int y;
 };
-
 struct YourHero {
     Vector2Int position;
     Vector2Int speed;
@@ -20,7 +19,7 @@ struct Questions {
 
 YourHero yourHero;
 Questions question[20];
-int num = 20; // Initially 5 questions
+int num = 20; // Initially 20 questions
 
 void InitGame() {
     // Initialize yourHero
