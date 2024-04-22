@@ -9,7 +9,6 @@ int login(void)
     const int screenHeight = 450;
 
     InitWindow(screenWidth, screenHeight, "Login Page");
-    InitWindow(screenWidth, screenHeight, "Background Image");
 
     char username[MAX_INPUT_CHARS + 1] = "\0";
     char password[MAX_INPUT_CHARS + 1] = "\0";
@@ -131,15 +130,21 @@ int login(void)
 
     return 0;
 }
+//-----------------------------------------------------------------------------------------------
 void subjectMenu() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "SubjectMenu");
+    InitWindow(screenWidth, screenHeight, "Subject Menu");
+
+    Texture2D background = LoadTexture("../assets/background.png");
+
+    background.width = screenWidth;
+    background.height = screenHeight;
 
     const char* menuOptions[MAX_OPTIONS1] = {
         "Math",
-        "Chemestry",
+        "Chemistry",
         "Geography",
         "History",
         "English",
@@ -152,31 +157,31 @@ void subjectMenu() {
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        if (IsKeyPressed(KEY_UP)) //Checks if KEY_UP is pressed
+        if (IsKeyPressed(KEY_UP)) // Checks if KEY_UP is pressed
         {
             selectedOption = (selectedOption - 1 + MAX_OPTIONS1) % MAX_OPTIONS1;
         }
-        else if (IsKeyPressed(KEY_DOWN)) //Checks if KEY_DOWN is pressed
+        else if (IsKeyPressed(KEY_DOWN)) // Checks if KEY_DOWN is pressed
         {
             selectedOption = (selectedOption + 1) % MAX_OPTIONS1;
         }
-        else if (IsKeyPressed(KEY_ENTER)) //Checks if KEY_ENTER is pressed
+        else if (IsKeyPressed(KEY_ENTER)) // Checks if KEY_ENTER is pressed
         {
             selectedSubject = selectedOption;
         }
 
         // Set avatarNum based on selectedOption using switch-case
         switch (selectedSubject) {
-        case 2:
+        case 1:
             math(); // Call function math
             break;
-        case 3:
-            chemestry(); // Call function chemestry
+        case 2:
+            chemistry(); // Call function chemistry
             break;
-        case 4:
+        case 3:
             geography(); // Call function geography
             break;
-        case 41:
+        case 4:
             history(); // Call function history
             break;
         case 5:
@@ -206,7 +211,13 @@ void subjectMenu() {
         }
 
         EndDrawing();
+
+        // Draw the background image
+        DrawTexture(background, 0, 0, WHITE);
+
     }
+    // De-Initialization
+    UnloadTexture(background);
 
     CloseWindow();
 }

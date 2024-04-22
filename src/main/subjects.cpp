@@ -1,6 +1,6 @@
 #include "main.h"
-//void for every subject that is choosen
-void chemestry()
+// Void for every subject that is choosen
+void chemistry()
 {
 	choosenOne = 1;
 	choosenTwo = 1;

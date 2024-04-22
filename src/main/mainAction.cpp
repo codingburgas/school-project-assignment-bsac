@@ -59,10 +59,10 @@ void UpdateGame() {
             question[i].position = { GetRandomValue(0, screenWidth / cellSize - 1) * cellSize,
                                    GetRandomValue(0, screenHeight / cellSize - 1) * cellSize };
             // Decrease the number of active questions
-            questionNum++;//Add up one to questionNum
-            asnwerNum++;//Add up one to asnwerNum
-            num--;//Remove one from num
-            if (num == 0)//Check if num equals 0
+            questionNum++; // Add up one to questionNum
+            asnwerNum++; // Add up one to asnwerNum
+            num--; // Remove one from num
+            if (num == 0) // Check if num equals 0
             {
                 subjectMenu();
             }

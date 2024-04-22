@@ -4,7 +4,7 @@
 #include <iostream>
 void subjectMenu();
 void math();
-void chemestry();
+void chemistry();
 void history();
 void geography();
 void deutsch();

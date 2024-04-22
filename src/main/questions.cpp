@@ -10,7 +10,7 @@ int asnwerNum = 0;
 bool showTryAgain = false;
 bool congratulationsShown = false;
 
-//questions and answers
+// Questions and answers
 std::string answer = "";
 std::string cheerText = "";
 std::string arr[21] = { ".", "What is the chemical symbol for potassium?", "Which element is essential for human bones and teeth?", "What is the lightest noble gas?", "Which metal is liquid at room temperature?", "What element is commonly used in batteries?","What is the chemical symbol for gold?", "Which gas do plants use for photosynthesis?", "What element is the primary component of diamonds?", "WWhich element has the atomic number 1?", "What is the chemical symbol for iron?", "Which element is most abundant in the Earth's crust?", "What is the chemical symbol for silver?", "Which gas is responsible for the blue color of the sky?", "What element is commonly used in light bulbs?", " Which element is essential for the process of photosynthesis?", " What is the chemical symbol for lead?", "Which metal is commonly used in aircraft construction?", "What element is used in the manufacture of glass?", "Which element is essential for the formation of DNA?", "What is the chemical symbol for nitrogen?" };
@@ -29,7 +29,7 @@ void DrawTextCenter(const char* text, int fontSize, int posX, int posY, Color co
     int width = MeasureText(text, fontSize);
     DrawText(text, posX - width / 2, posY, fontSize, color);
 }
-//answers
+// Answers
 void UpdateInput() {
     switch (choosenTwo)
     {
@@ -172,7 +172,7 @@ void UpdateInput() {
 
     }
 }
-//questions
+// Questions
 void questionn() {
     InitWindow(screenWidth, screenHeight, "Question and Answer");
     SetTargetFPS(60);
