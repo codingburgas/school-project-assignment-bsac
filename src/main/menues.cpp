@@ -1,8 +1,7 @@
 #include "main.h"
 
-#define MAX_INPUT_CHARS  20
-#define MAX_OPTIONS 5
-#define MAX_OPTIONS1 6
+#define MAX_INPUT_CHARS  20 // Define chars for questions
+#define MAX_OPTIONS1 6 // Define chars for subjectMenu
 int login(void)
 {
     // Initialization
@@ -20,9 +19,9 @@ int login(void)
     background.width = screenWidth;
     background.height = screenHeight;
 
-    Rectangle usernameBox = { screenWidth / 2 - 100, screenHeight / 2 - 40, 200, 40 };
-    Rectangle passwordBox = { screenWidth / 2 - 100, screenHeight / 2 + 20, 200, 40 };
-    Rectangle loginButton = { screenWidth / 2 - 80, screenHeight / 2 + 80, 160, 40 };
+    Rectangle usernameBox = { screenWidth / 2 - 100, screenHeight / 2 - 40, 200, 40 }; // Set usernameBox
+    Rectangle passwordBox = { screenWidth / 2 - 100, screenHeight / 2 + 20, 200, 40 }; // Set passwordBox
+    Rectangle loginButton = { screenWidth / 2 - 80, screenHeight / 2 + 80, 160, 40 }; // Set loginButton
 
     bool loginPressed = false;// Check if loginButton is pressed
     bool isUsernameTyped = false; // Heck if username is typed
@@ -34,7 +33,7 @@ int login(void)
     // Main loop
     while (!WindowShouldClose())
     {
-        // Update
+        // Check loginButton collision
         if (CheckCollisionPointRec(GetMousePosition(), loginButton))
         {
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
@@ -43,15 +42,14 @@ int login(void)
             }
         }
 
-        // Draw
+        // Start drawing
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
 
-        // Draw title
-        DrawRectangleRec(usernameBox, LIGHTGRAY);
-        DrawRectangleRec(passwordBox, LIGHTGRAY);
-        DrawRectangleRec(loginButton, (loginPressed) ? GRAY : DARKGRAY);
+        DrawRectangleRec(usernameBox, LIGHTGRAY); // Draw usernameBox
+        DrawRectangleRec(passwordBox, LIGHTGRAY); // Draw passwordBox
+        DrawRectangleRec(loginButton, (loginPressed) ? GRAY : DARKGRAY); // Draw loginButton
 
         // Draw "Username" text only if username is not typed
         if (!isUsernameTyped)
@@ -65,10 +63,10 @@ int login(void)
             DrawText("Password:", passwordBox.x + 10, passwordBox.y + 10, 20, BLACK);
         }
 
-        DrawText(username, usernameBox.x + 20, usernameBox.y + 20, 20, MAROON);
-        DrawText(password, passwordBox.x + 20, passwordBox.y + 20, 20, MAROON);
+        DrawText(username, usernameBox.x + 20, usernameBox.y + 20, 20, MAROON); // Draw text for username
+        DrawText(password, passwordBox.x + 20, passwordBox.y + 20, 20, MAROON); // Draw text for password
 
-        DrawText("LOGIN", loginButton.x + 40, loginButton.y + 10, 20, WHITE);
+        DrawText("LOGIN", loginButton.x + 40, loginButton.y + 10, 20, WHITE); // Draw text for login
 
         EndDrawing();
 
@@ -169,23 +167,23 @@ void subjectMenu() {
 
         // Set avatarNum based on selectedOption using switch-case
         switch (selectedSubject) {
-        case 1:
-            math();
-            break;
         case 2:
-            chemestry();
+            math(); // Call function math
             break;
         case 3:
-            geography();
+            chemestry(); // Call function chemestry
             break;
         case 4:
-            history();
+            geography(); // Call function geography
+            break;
+        case 41:
+            history(); // Call function history
             break;
         case 5:
-            english();
+            english(); // Call function english
             break;
         case 6:
-            deutsch();
+            deutsch(); // Call function deutsch
             break;
         default:
             subjectNum = 0; // Set default value to subjectNum if selectedOption is out of range
@@ -195,12 +193,14 @@ void subjectMenu() {
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        // Draw menu options
-        for (int i = 0; i < MAX_OPTIONS1; i++) {
-            if (i == selectedOption) {
+        for (int i = 0; i < MAX_OPTIONS1; i++)  // Draw subject options 
+        {
+            if (i == selectedOption) 
+            {
                 DrawText(menuOptions[i], 350, 177 + 30 * i, 20, RED);
             }
-            else {
+            else 
+            {
                 DrawText(menuOptions[i], 350, 177 + 30 * i, 20, BLACK);
             }
         }

@@ -131,7 +131,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="questions.cpp" />
     <ClCompile Include="subjects.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="mainAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
